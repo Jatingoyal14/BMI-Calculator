@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Health & Fitness</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Calculate your Body Mass Index (BMI) with our easy-to-use calculator. Get instant results with health recommendations.">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="container">
+                <h1 class="app-title">
+                    <span class="title-icon">📊</span>
+                    BMI Calculator
+                </h1>
+                <p class="app-subtitle">Track your health with precision</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Calculator Card -->
+                <div class="calculator-card card">
+                    <div class="card__body">
+                        <!-- Unit Toggle -->
+                        <div class="unit-toggle">
+                            <span class="unit-label">Units:</span>
+                            <div class="toggle-switch">
+                                <input type="radio" id="metric" name="units" value="metric" checked>
+                                <label for="metric" class="toggle-option">Metric</label>
+                                <input type="radio" id="imperial" name="units" value="imperial">
+                                <label for="imperial" class="toggle-option">Imperial</label>
+                                <div class="toggle-slider"></div>
+                            </div>
+                        </div>
+
+                        <!-- Input Form -->
+                        <form class="calculator-form" id="bmiForm">
+                            <div class="form-row">
+                                <!-- Height Input -->
+                                <div class="form-group height-group">
+                                    <label for="height" class="form-label" id="heightLabel">Height (cm)</label>
+                                    <div class="input-container">
+                                        <input 
+                                            type="number" 
+                                            id="height" 
+                                            class="form-control height-input" 
+                                            placeholder="170"
+                                            min="0"
+                                            step="0.1"
+                                            aria-describedby="height-help"
+                                        >
+                                        <span class="input-unit" id="heightUnit">cm</span>
+                                    </div>
+                                    <div class="imperial-height hidden">
+                                        <input 
+                                            type="number" 
+                                            id="heightFt" 
+                                            class="form-control height-ft" 
+                                            placeholder="5"
+                                            min="0"
+                                            max="8"
+                                            aria-label="Height feet"
+                                        >
+                                        <span class="input-unit">ft</span>
+                                        <input 
+                                            type="number" 
+                                            id="heightIn" 
+                                            class="form-control height-in" 
+                                            placeholder="7"
+                                            min="0"
+                                            max="11"
+                                            aria-label="Height inches"
+                                        >
+                                        <span class="input-unit">in</span>
+                                    </div>
+                                    <span class="form-error" id="heightError"></span>
+                                </div>
+
+                                <!-- Weight Input -->
+                                <div class="form-group">
+                                    <label for="weight" class="form-label" id="weightLabel">Weight (kg)</label>
+                                    <div class="input-container">
+                                        <input 
+                                            type="number" 
+                                            id="weight" 
+                                            class="form-control" 
+                                            placeholder="70"
+                                            min="0"
+                                            step="0.1"
+                                            aria-describedby="weight-help"
+                                        >
+                                        <span class="input-unit" id="weightUnit">kg</span>
+                                    </div>
+                                    <span class="form-error" id="weightError"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" id="calculateBtn" class="btn btn--primary btn--full-width">
+                                    <span class="btn-text">Calculate BMI</span>
+                                    <span class="btn-spinner hidden">⟳</span>
+                                </button>
+                                <button type="button" id="resetBtn" class="btn btn--outline">Reset</button>
+                            </div>
+                        </form>
+
+                        <!-- Results Section -->
+                        <div class="results-section hidden" id="results">
+                            <div class="bmi-result">
+                                <div class="bmi-score">
+                                    <span class="bmi-value" id="bmiValue">0</span>
+                                    <span class="bmi-unit">BMI</span>
+                                </div>
+                                <div class="bmi-category" id="bmiCategory"></div>
+                            </div>
+                            
+                            <div class="bmi-details">
+                                <div class="bmi-description" id="bmiDescription"></div>
+                                <div class="ideal-weight">
+                                    <strong>Ideal weight range:</strong>
+                                    <span id="idealWeightRange"></span>
+                                </div>
+                            </div>
+
+                            <div class="bmi-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                    <div class="progress-indicator" id="progressIndicator"></div>
+                                </div>
+                                <div class="progress-labels">
+                                    <span>Underweight</span>
+                                    <span>Normal</span>
+                                    <span>Overweight</span>
+                                    <span>Obese</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div class="history-section card">
+                    <div class="card__header">
+                        <button class="history-toggle" id="historyToggle" aria-expanded="false">
+                            <span>Calculation History</span>
+                            <span class="toggle-arrow">▼</span>
+                        </button>
+                    </div>
+                    <div class="card__body history-content hidden" id="historyContent">
+                        <div class="history-list" id="historyList">
+                            <p class="no-history">No calculations yet. Calculate your BMI to see history.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Tips Section -->
+                <div class="tips-section card" id="tipsSection">
+                    <div class="card__header">
+                        <h3>Health Tips</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="tips-content" id="tipsContent">
+                            <p>Calculate your BMI to receive personalized health tips based on your results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="container">
+                <p class="footer-text">
+                    <strong>Disclaimer:</strong> This BMI calculator is for informational purposes only. 
+                    Always consult with healthcare professionals for medical advice.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Toast Notifications -->
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
