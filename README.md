@@ -1,10 +1,4 @@
-```markdown
 # 📊 BMI Calculator App
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/bmi-calculator?style=flat-square)](https://github.com/yourusername/bmi-calculator/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/bmi-calculator?style=flat-square)](https://github.com/yourusername/bmi-calculator/network/members)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_NETLIFY_PROJECT_ID/deploy-status)](https://app.netlify.com/sites/YOUR_SITE_NAME/deploys)
 
 A modern, responsive, and feature-rich **Body Mass Index (BMI) Calculator** built with **HTML, CSS, and JavaScript**.  
 It instantly calculates BMI, supports **metric and imperial** units, keeps a calculation history, and gives **health recommendations** — all with a **clean, mobile-friendly UI**.
@@ -13,7 +7,6 @@ It instantly calculates BMI, supports **metric and imperial** units, keeps a cal
 
 ## 🌐 Live Demo
 🚀 **Live App:** [View BMI Calculator](https://jatingoyal14.github.io/BMI-Calculator/)  
-![App Demo](demo.gif) 
 ---
 
 ## 🚀 Features
@@ -32,19 +25,18 @@ It instantly calculates BMI, supports **metric and imperial** units, keeps a cal
 ## 📸 Screenshot
 
 ![BMI Calculator Screenshot](img.png)  
+
 ---
 
 ## 🧮 BMI Formula
 
 **Metric:**
-```
 BMI = weight(kg) / (height(m)²)
-```
+
 
 **Imperial:**
-```
 BMI = (703 × weight(lbs)) / (height(in)²)
-```
+
 
 ---
 
@@ -57,32 +49,21 @@ BMI = (703 × weight(lbs)) / (height(in)²)
 
 ---
 
-## 📂 Project Structure
-
-```
-BMI-Calculator/
-│── index.html          # Main HTML file
-│── style.css           # Styles
-│── app.js              # App logic
-│── assets/             # Images, icons, demo GIFs
-│── README.md           # Documentation
-
-```
 
 ---
 
 ## ▶️ Getting Started
 
 ### 1️⃣ Clone the Repository
-```
-git clone https://github.com/yourusername/bmi-calculator.git
+git clone https://github.com/Jatingoyal14/bmi-calculator.git
 cd bmi-calculator
-```
 
 ### 2️⃣ Open in Browser
 Just open `index.html` in your favorite browser.  
 *(No server setup required)*
+
 ---
+
 
 ## 📊 WHO BMI Categories
 
@@ -120,9 +101,4 @@ This is **not** a medical diagnostic tool. For health concerns, please consult a
 Licensed under the **MIT License** – use, modify, and share freely.
 
 ---
-
-### 👨‍💻 Author
-**Jatin Goyal** 
-🔗 [Portfolio](https://yourwebsite.com) • 📧 jatingoyal01407@gmail.com
-```
 
